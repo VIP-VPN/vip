@@ -48,12 +48,12 @@ echo ""
 #########################
 # // USERNAME IZIN IPP
 rm -f /usr/bin/user
-username=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+username=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
 
 # // VALIDITY
 rm -f /usr/bin/e
-valid=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+valid=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $3}')
 echo "$valid" > /usr/bin/e
 
 # // DETAIL ORDER IZIN IP
@@ -83,7 +83,7 @@ Info="${green}Activated${NC}"
 Error="${green}Expired ${NC}"
 #//
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+Exp1=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $3}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -164,7 +164,7 @@ else
    status_dropbear="${z}[OFF]${NC} "
 fi
 # // UPDATE / REVISI all menu
-REVISI="https://raw.githubusercontent.com/RMBL-VPN/vip/main/"
+REVISI="https://raw.githubusercontent.com/VIP-VPN/vip/main/"
 
 # // INFO CREATE ACCOUNT
 # \\ Vless account //
