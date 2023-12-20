@@ -4,13 +4,13 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 colornow=$(cat /etc/rmbl/theme/color.conf)
 NC="\e[0m"
 RED="\033[0;31m"
-COLOR1="$(cat /etc/casper/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/casper/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+COLOR1="$(cat /etc/rmbl/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/rmbl/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 WH='\033[1;37m'
 ipsaya=$(wget -qO- ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/casper9/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -44,7 +44,7 @@ shutdown -r now
 fi
 cd
 today=$(date -d "0 days" +"%Y-%m-%d")
-Exp2=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $ipsaya | awk '{print $3}')
+Exp2=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $ipsaya | awk '{print $3}')
 d1=$(date -d "$Exp2" +%s)
 d2=$(date -d "$today" +%s)
 certificate=$(( (d1 - d2) / 86400 ))
@@ -121,4 +121,4 @@ fi
 bash2=$( pgrep bash | wc -l )
 if [[ $bash2 -gt "20" ]]; then
 killall bash
-fi�
+fi
