@@ -12,7 +12,7 @@ WH='\033[1;37m'
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -79,15 +79,15 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://raw.githubusercontent.com/RMBL-ZERO/ZERO/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+wget https://raw.githubusercontent.com/VIP-VPN/vip/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 
 }
 res2() {
-wget https://raw.githubusercontent.com/RMBL-ZERO/ZERO/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
+wget https://raw.githubusercontent.com/RMBL-ZERO/vip/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 
 }
 res3() {
-wget https://raw.githubusercontent.com/RMBL-ZERO/ZERO/main/install/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
+wget https://raw.githubusercontent.com/VIP-VPN/vip/main/install/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
 clear
 }
 clear
@@ -130,7 +130,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│ \033[1;37mPlease select a your Choice to Set Domain$COLOR1│${NC}"
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│  [ 1 ]  \033[1;37mDomain xxx.vpnvip.app       ${NC}"
+echo -e "$COLOR1│  [ 1 ]  \033[1;37mDomain xxx.rmblbpn.xyz        ${NC}"
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 until [[ $domain2 =~ ^[1-1]+$ ]]; do 
 read -p "   Please select numbers 1  : " domain2
@@ -138,7 +138,7 @@ done
 if [[ $domain2 == "1" ]]; then
 clear
 echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
-echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.yogzvpn.cloud       $COLOR1│${NC}"
+echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.rmblvln.xyz        $COLOR1│${NC}"
 echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
 echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
@@ -1954,4 +1954,4 @@ case $opt in
 99 |99) clear ; clearcache ; exit ;;
 00 |0) clear ; menu ; exit ;;
 *) echo -e "" ; echo "Anda salah tekan" ; sleep 1 ; m-system ;;
-esac�
+esac
