@@ -988,4 +988,4 @@ case $opt in
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo "salah tekan " ; sleep 1 ; m-vless ;;
-esac����������
+esac
