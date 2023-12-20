@@ -1,7 +1,7 @@
 #!/bin/bash
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $4}')
+IPVPS=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $4}')
 if [[ $MYIP == $IPVPS ]]; then
 domain
 Casper2
@@ -40,9 +40,9 @@ fi
 secs_to_human() {
 echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
 }
-rm -rf /etc/casper
-mkdir -p /etc/casper
-mkdir -p /etc/casper/theme
+rm -rf /etc/rmbl
+mkdir -p /etc/rmbl
+mkdir -p /etc/rmbl/theme
 mkdir -p /var/lib/ >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
 clear
@@ -89,7 +89,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "1 days" +"%Y-%m-%d")
 mkdir /root/casper
 cd /root/casper
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini >/dev/null 2>&1
+wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini >/dev/null 2>&1
 echo "### $author $hhari $MYIP @trial" >> ipmini
 sleep 1
 rm -rf .git
@@ -102,7 +102,7 @@ git branch -M main >/dev/null 2>&1
 git remote add origin https://github.com/${USERGIT}/permission >/dev/null 2>&1
 git push -f https://${APIGIT}@github.com/${USERGIT}/permission >/dev/null 2>&1
 sleep 1
-rm -rf /root/casper
+rm -rf /root/rmbl
 rm -rf /etc/github
 clear
 fi
@@ -118,13 +118,13 @@ if [ -z $kode ]; then
 echo -e "KODE SALAH SILAHKAN MASUKKAN ULANG KODENYA"
 key2
 fi
-LIST=$(curl -sS https://raw.githubusercontent.com/casper9/license/main/key | grep $kode | awk '{print $2}')
-Key=$(curl -sS https://raw.githubusercontent.com/casper9/license/main/key | grep $kode | awk '{print $3}')
-KEY2=$(curl -sS https://raw.githubusercontent.com/casper9/license/main/key | grep $kode | awk '{print $4}')
-ADMIN=$(curl -sS https://raw.githubusercontent.com/casper9/license/main/key | grep $kode | awk '{print $5}')
-TOTALIP=$(curl -sS https://raw.githubusercontent.com/casper9/license/main/key | grep $kode | awk '{print $6}')
+LIST=$(curl -sS https://raw.githubusercontent.com/VPN-VIP/license/main/key | grep $kode | awk '{print $2}')
+Key=$(curl -sS https://raw.githubusercontent.com/VPN-VIP/license/main/key | grep $kode | awk '{print $3}')
+KEY2=$(curl -sS https://raw.githubusercontent.com/VPN-VIP/license/main/key | grep $kode | awk '{print $4}')
+ADMIN=$(curl -sS https://raw.githubusercontent.com/VPN-VIP/license/main/key | grep $kode | awk '{print $5}')
+TOTALIP=$(curl -sS https://raw.githubusercontent.com/VPN-VIP/license/main/key | grep $kode | awk '{print $6}')
 cd
-if [[ $kode == "CASPERGG" ]]; then
+if [[ $kode == "RMBLVIP" ]]; then
 MYIP=$(curl -sS ipv4.icanhazip.com)
 rm -rf /etc/github
 mkdir /etc/github
@@ -136,11 +136,11 @@ APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
 USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "30 days" +"%Y-%m-%d")
-mkdir /root/casper
-cd /root/casper
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini >/dev/null 2>&1
+mkdir /root/rmbl
+cd /root/rmbl
+wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini >/dev/null 2>&1
 
-echo "### $author $hhari $MYIP @CASPER" >> ipmini
+echo "### $author $hhari $MYIP @RMBL" >> ipmini
 
 sleep 0.5
 rm -rf .git
@@ -154,7 +154,7 @@ git remote add origin https://github.com/${USERGIT}/permission >/dev/null 2>&1
 git push -f https://${APIGIT}@github.com/${USERGIT}/permission >/dev/null 2>&1
 sleep 0.5
 rm ipmini
-elif [[ $kode == "CASPERVIP" ]]; then
+elif [[ $kode == "RMBLVVIP" ]]; then
 MYIP2=$(curl -sS ipv4.icanhazip.com)
 author2=$(cat /etc/profil)
 rm -rf /etc/github
@@ -169,9 +169,9 @@ USERGIT=$(cat /etc/github/username)
 hhari2=$(date -d "999 days" +"%Y-%m-%d")
 mkdir /root/casper
 cd /root/casper
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini >/dev/null 2>&1
+wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini >/dev/null 2>&1
 
-sed -i "/# VIP/a ### ${author2} ${hhari2} ${MYIP2} ON 999 VIP" /root/casper/ipmini
+sed -i "/# VIP/a ### ${author2} ${hhari2} ${MYIP2} ON 999 VIP" /root/rmbl/ipmini
 
 sleep 0.5
 rm -rf .git
@@ -185,7 +185,7 @@ git remote add origin https://github.com/${USERGIT}/permission >/dev/null 2>&1
 git push -f https://${APIGIT}@github.com/${USERGIT}/permission >/dev/null 2>&1
 sleep 0.5
 rm ipmini
-elif [[ $kode == "CASPERADMIN" ]]; then
+elif [[ $kode == "RMBLADMIN" ]]; then
 MYIP3=$(curl -sS ipv4.icanhazip.com)
 author3=$(cat /etc/profil)
 rm -rf /etc/github
@@ -198,11 +198,11 @@ APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
 USERGIT=$(cat /etc/github/username)
 hhari3=$(date -d "999 days" +"%Y-%m-%d")
-mkdir /root/casper
-cd /root/casper
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini >/dev/null 2>&1
+mkdir /root/rmbl
+cd /root/rmbl
+wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini >/dev/null 2>&1
 
-sed -i "/# RESELLER/a ### ${author3} ${hhari3} ${MYIP3} ON 999" /root/casper/ipmini
+sed -i "/# RESELLER/a ### ${author3} ${hhari3} ${MYIP3} ON 999" /root/rmbl/ipmini
 
 sleep 0.5
 rm -rf .git
@@ -228,11 +228,11 @@ APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
 USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "$KEY2 days" +"%Y-%m-%d")
-mkdir /root/casper
-cd /root/casper
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini >/dev/null 2>&1
+mkdir /root/rmbl
+cd /root/rmbl
+wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini >/dev/null 2>&1
 if [ "$ADMIN" = "ON" ]; then
-sed -i "/# RESELLER/a ### ${author} ${hhari} ${MYIP} ${ADMIN} ${TOTALIP}" /root/casper/ipmini
+sed -i "/# RESELLER/a ### ${author} ${hhari} ${MYIP} ${ADMIN} ${TOTALIP}" /root/rmbl/ipmini
 else
 echo "### $author $hhari $MYIP @$LIST" >> ipmini
 fi
@@ -249,11 +249,11 @@ git remote add origin https://github.com/${USERGIT}/permission >/dev/null 2>&1
 git push -f https://${APIGIT}@github.com/${USERGIT}/permission >/dev/null 2>&1
 sleep 0.5
 rm ipmini
-wget https://raw.githubusercontent.com/casper9/license/main/key >/dev/null 2>&1
+wget https://raw.githubusercontent.com/VPN-VIP/license/main/key >/dev/null 2>&1
 if [ "$ADMIN" = "ON" ]; then
-sed -i "/^### $LIST $Key $KEY2 $ADMIN $TOTALIP/d" /root/casper/key
+sed -i "/^### $LIST $Key $KEY2 $ADMIN $TOTALIP/d" /root/rmbl/key
 else
-sed -i "/^### $LIST $Key $KEY2/d" /root/casper/key
+sed -i "/^### $LIST $Key $KEY2/d" /root/rmbl/key
 fi
 sleep 0.5
 rm -rf .git
@@ -265,7 +265,7 @@ git commit -m register >/dev/null 2>&1
 git branch -M main >/dev/null 2>&1
 git remote add origin https://github.com/${USERGIT}/license >/dev/null 2>&1
 git push -f https://${APIGIT}@github.com/${USERGIT}/license >/dev/null 2>&1
-rm -rf /root/casper
+rm -rf /root/rmbl
 rm -rf /etc/github
 clear
 else
