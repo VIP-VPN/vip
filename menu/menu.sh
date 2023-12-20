@@ -264,6 +264,7 @@ echo -e "    $COLOR1║$NC  ${WH}Total    $COLOR1║${NC}    ${WH}Today     ${WH
 echo -e "    $COLOR1║$NC ${WH}Bantwidth $COLOR1║${NC}  ${WH}$today_tx $today_txv   ${WH}$yesterday_tx $yesterday_txv   ${WH}$month_tx $month_txv$COLOR1${NC}"
 echo -e "    $COLOR1╚═════════════════════════════════════════════════╝${NC}"
 echo -e "         $COLOR1╔═════════════════════════════════════════╗${NC}"
+echo -e "         $COLOR1║$NC ${WH}Versi  ${NC}: ${WH}$(cat /opt/.ver) Version${NC}$COLOR1"
 echo -e "         $COLOR1║$NC ${WH}Status${NC} : $sts"
 echo -e "         $COLOR1║$NC ${WH}Client${NC} : $username "
 echo -e "         $COLOR1║$NC ${WH}Expiry${NC} : $green$certifacate ${NC}Days"
