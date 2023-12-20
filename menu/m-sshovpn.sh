@@ -969,4 +969,4 @@ case $opt in
 X  | 0) clear ; m-sshovpn ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; m-sshovpn ;;
-esac��
+esac
