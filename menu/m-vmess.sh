@@ -1262,4 +1262,4 @@ case $opt in
 11 | 11) clear ; del-res ;;
 00 | 0) clear ; menu ;;
 *) clear ; m-vmess ;;
-esac�
+esac
