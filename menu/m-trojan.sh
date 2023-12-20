@@ -892,4 +892,4 @@ case $opt in
 11 | 11) clear ; del-res ;;
 x) exit ;;
 *) echo "SALAH TEKAN" ; sleep 1 ; m-trojan ;;
-esac������
+esac
