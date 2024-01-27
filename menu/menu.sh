@@ -68,11 +68,11 @@ U4=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini 
 U5=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $5}')
 U6=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $6}')
 MYIP=$(curl -sS ipv4.icanhazip.com)
-web=$(curl -sS  http://rmb.com/ress | grep $kode | awk '{print $3}')
-web2=$(curl -sS http://rmb.com/ress | grep $kode | awk '{print $2}')
-web3=$(curl -sS http://rmb.com/ress | grep $kode | awk '{print $4}')
-web4=$(curl -sS http://rmb.com/ress | grep $kode | awk '{print $5}')
-web5=$(curl -sS http://rmb.com/ress | grep $kode | awk '{print $6}')
+web=$(curl -sS  http://rmb.vip.app/ress | grep $kode | awk '{print $3}')
+web2=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $2}')
+web3=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $4}')
+web4=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $5}')
+web5=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $6}')
 userscript=$(curl -sS https://pastebin.com/raw/YZFr8JDy | awk '{print $1}')
 emailscript=$(curl -sS https://pastebin.com/raw/YZFr8JDy | awk '{print $2}')
 tokenscript=$(curl -sS https://pastebin.com/raw/YZFr8JDy | awk '{print $3}')
@@ -274,14 +274,16 @@ status_xray="${COLOR1}ON${NC}"
 else
 status_xray="${RED}OFF${NC}"
 fi
+# STATUS EXPIRED ACTIVE
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[4$below" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}(Registered)${Font_color_suffix}"
 Error="${Green_font_prefix}${Font_color_suffix}${Red_font_prefix}[EXPIRED]${Font_color_suffix}"
+
 today=$(date -d "0 days" +"%Y-%m-%d")
 if [[ $today < $Exp2 ]]; then
-sts="${Info}"
+    sts="${Info}"
 else
-sts="${Error}"
+    sts="${Error}"
 fi
 vmess=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 vless=$(grep -c -E "^#vlg " "/etc/xray/config.json")
@@ -389,7 +391,7 @@ echo -e " $COLOR1║$NC${WH}• IP VPS        ${COLOR1}: ${WH}$MYIP${NC}"
 echo -e " $COLOR1║$NC${WH}• DOMAIN        ${COLOR1}: ${WH}$(cat /etc/xray/domain)"
 echo -e " $COLOR1╚══════════════════════════════════════════════════════════╝${NC}"
 echo -e "    $COLOR1╔═════════════════════════════════════════════════╗${NC}"
-echo -e "    $COLOR1║$NC ${WH}[ SSH WS : ${status_ws} ${WH}] ${WH}[ XRAY : ${status_xray} ${WH}] ${WH}[ NGINX : ${status_nginx} ${WH}]$COLOR1║$NC"
+echo -e "    $COLOR1║ $NC ${WH}[ SSH WS : ${status_ws} ${WH}]  ${WH}[ XRAY : ${status_xray} ${WH}]  ${WH}[ NGINX : ${status_nginx} ${WH}]$COLOR1 ║$NC"
 echo -e "    $COLOR1╚═════════════════════════════════════════════════╝${NC}"
 echo -e "    $COLOR1╔═════════════════════════════════════════════════╗${NC}"
 echo -e "    $COLOR1║ ${WH} ${WH}SSH       VMESS         VLESS        TROJAN   $NC $COLOR1║ $NC"
@@ -475,18 +477,18 @@ echo "lock" > /etc/typessh
 echo "lock" > /etc/typexray
 menu
 }
-function m-update(){
+function updatews(){
 cd
 rm -rf *
-wget https://raw.githubusercontent.com/VIP-VPN/vip/menu/main/update &> /dev/null
-chmod +x update
-./update
+wget https://raw.githubusercontent.com/vip-VPN/vip/main/menu/install-up.sh &> /dev/null
+chmod +x install_up.sh
+./install_up.sh
 }
 echo -e "         $COLOR1╔═════════════════════════════════════════╗${NC}"
-echo -e "         $COLOR1║$NC ${WH}Versi  ${NC}: ${WH}$(cat /opt/.ver) Version${NC}$COLOR1"
-echo -e "         $COLOR1║$NC ${WH}Status${NC} : $sts"
-echo -e "         $COLOR1║$NC ${WH}Client${NC} : ${WH}$author${NC}"
-echo -e "         $COLOR1║$NC ${WH}Expiry${NC} : ${WH}$Exp2 $sts ${NC}$COLOR1"
+echo -e "         $COLOR1║$NC      ${WH}Versi  ${NC}: ${WH}$(cat /opt/.ver) Version${NC}$COLOR1"
+echo -e "         $COLOR1║$NC      ${WH}Client${NC} : ${WH}$author${NC}"
+echo -e "         $COLOR1║$NC      ${WH}Durasi${NC} : ${WH}$certificate hari${NC}$COLOR1"
+echo -e "         $COLOR1║$NC      ${WH}Expiry${NC} : ${WH}$Exp2 $sts ${NC}$COLOR1"
 echo -e "         $COLOR1╚═════════════════════════════════════════╝${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
