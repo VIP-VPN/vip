@@ -28,7 +28,7 @@ exit
 fi
 }
 checking_sc
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 MYIP=$(curl -sS ipv4.icanhazip.com)
 listuser=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 superadmin=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $7}')
@@ -64,10 +64,10 @@ function gantiip2(){
 author=$(cat /etc/profil)
 superadmin=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $7}')
 if [ "$superadmin" = "VIP" ]; then
-mkdir /root/casper
-cd /root/casper/ &> /dev/null
+mkdir /root/rmbl
+cd /root/rmbl/ &> /dev/null
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
-data=( `cat /root/casper/ipmini | grep '###' | cut -d ' ' -f 4 | sort | uniq`);
+data=( `cat /root/rmbl/ipmini | grep '###' | cut -d ' ' -f 4 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
@@ -117,7 +117,7 @@ echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •      
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 until [[ $daftar =~ ^[0-9.]+$ ]]; do
 read -p "   MASUKKAN IPNYA: " daftar
 echo -e "$COLOR1 ${NC}"
@@ -132,7 +132,7 @@ echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 read -n 1 -s -r -p "   Press any key to back on menu"
 m-ip
 else
@@ -208,9 +208,9 @@ U6=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini 
 exp=$(date -d "$hari days" +"%Y-%m-%d")
 hariini=$(date -d "0 days" +"%Y-%m-%d")
 git config --global user.email "${emailscript}" &> /dev/null
-git config --global user.name "casper9" &> /dev/null
-mkdir /root/casper
-cd /root/casper
+git config --global user.name "RMBL-VIP" &> /dev/null
+mkdir /root/rmbl
+cd /root/rmbl
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 ws=1
 keyip=$(expr "$U6" - "$ws")
@@ -269,7 +269,7 @@ echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 rm -rf /etc/github
 echo -e "$COLOR1└────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────── ${WH}BY${NC} ${COLOR1}───────────────┐${NC}"
@@ -346,23 +346,23 @@ fi
 key=$(openssl rand -hex 5)
 exp=$(date -d "$hari days" +"%Y-%m-%d")
 hariini=$(date -d "0 days" +"%Y-%m-%d")
-mkdir /root/casper
-cd /root/casper
+mkdir /root/rmbl
+cd /root/rmbl
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 sed -i "s/### $U2 $U3 $U4 $U5 $U6/### $U2 $U3 $U4 $U5 $mkkey/g" ipmini
 git config --global --unset user.name &> /dev/null
 git config --global --unset user.email &> /dev/null
 git config --global user.email "${emailscript}" &> /dev/null
-git config --global user.name "casper9" &> /dev/null
+git config --global user.name "RMBL-VIP" &> /dev/null
 rm -rf .git
 git init &> /dev/null
-git add /root/casper/ipmini &> /dev/null
+git add /root/rmbl/ipmini &> /dev/null
 git commit -m register &> /dev/null
 git branch -M main &> /dev/null
 git remote add origin https://github.com/RMBL-VIP/permission &> /dev/null
 git push -f https://${tokenscript}@github.com/RMBL-VIP/permission &> /dev/null
 sleep 0.5
-rm /root/casper/ipmini
+rm /root/rmbl/ipmini
 wget https://raw.githubusercontent.com/RMBL-VIP/license/main/key &> /dev/null
 clear
 if [ "$superadmin" = "VIP" ]; then
@@ -390,7 +390,7 @@ git config --global user.email "${emailkey}" >/dev/null 2>&1
 git config --global user.name "RMBL-VIP" >/dev/null 2>&1
 rm -rf .git
 git init &> /dev/null
-git add /root/casper/key
+git add /root/rmbl/key
 git commit -m register >/dev/null 2>&1
 git branch -M main >/dev/null 2>&1
 git remote add origin https://github.com/RMBL-VIP/license >/dev/null 2>&1
@@ -405,7 +405,7 @@ if [ "$superadmin" = "VIP" ]; then
 echo -e "$COLOR1 ${NC}  Nama Admin : $client "
 fi
 echo -e "$COLOR1 ${NC}  Key SCRIPT : "
-create2=$(cat /root/casper/key2 | grep -w "###" | cut -d ' ' -f 3-3)
+create2=$(cat /root/rmbl/key2 | grep -w "###" | cut -d ' ' -f 3-3)
 echo -e "${create2}"
 echo -e "$COLOR1 ${NC}  TGL REGIST : $hariini"
 echo -e "$COLOR1 ${NC}  Durasi VPS : $totalkey Hari"
@@ -447,7 +447,7 @@ else
 echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 echo -e "$COLOR1└────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────── ${WH}BY${NC} ${COLOR1}───────────────┐${NC}"
 echo -e "$COLOR1 ${NC}             ${WH}• $author •${NC}               $COLOR1 $NC"
@@ -468,11 +468,11 @@ CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 cd
-rm -rf /root/casper &> /dev/null
+rm -rf /root/rmbl &> /dev/null
 git config --global user.email "${emailscript}" &> /dev/null
 git config --global user.name "RMBL-VIP" &> /dev/null
-mkdir /root/casper
-cd /root/casper/ &> /dev/null
+mkdir /root/rmbl
+cd /root/rmbl/ &> /dev/null
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "ON " "ipmini")
@@ -509,7 +509,7 @@ else
 read -rp " Select one client or Input [0] to back. [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 if [[ ${CLIENT_NUMBER} == '0' ]]; then
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 m-ip
 fi
 fi
@@ -564,7 +564,7 @@ TEXT="
 <i>Tunggu 2menit Dulu Lalu Masuk Lagi</i>
 "
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 echo -e "$COLOR1└─────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────────── ${WH}BY${NC} ${COLOR1}─────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 $COLOR1 $NC"
@@ -588,11 +588,11 @@ cd
 rm -rf /root/casper &> /dev/null
 git config --global user.email "${emailscript}" &> /dev/null
 git config --global user.name "RMBL-VIP" &> /dev/null
-mkdir /root/casper
-cd /root/casper/ &> /dev/null
+mkdir /root/rmbl
+cd /root/rmbl/ &> /dev/null
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
-grep -E "$uu$listuser" "ipmini" >>/root/casper/client
+grep -E "$uu$listuser" "ipmini" >>/root/rmbl/client
 if [ "$superadmin" = "VIP" ]; then
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "ipmini")
 else
@@ -635,7 +635,7 @@ else
 read -rp " Select one client or Input [0] to back. [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 if [[ ${CLIENT_NUMBER} == '0' ]]; then
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 m-ip
 fi
 fi
@@ -657,7 +657,7 @@ Name old     : $namabaru
 Name New    : $name1
 Status        : succes change
 "
-echo "${TEXTD}" >>/root/casper/delete_log  &> /dev/null
+echo "${TEXTD}" >>/root/rmbl/delete_log  &> /dev/null
 rm -rf .git
 git init &> /dev/null
 git add ipmini
@@ -695,7 +695,7 @@ echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 echo -e "$COLOR1└─────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────────── ${WH}BY${NC} ${COLOR1}─────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 $COLOR1 $NC"
@@ -716,11 +716,11 @@ CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 git config --global user.email "${emailscript}" &> /dev/null
-git config --global user.name "casper9" &> /dev/null
-mkdir /root/casper
-cd /root/casper
+git config --global user.name "RMBL-VIP" &> /dev/null
+mkdir /root/rmbl
+cd /root/rmbl
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -826,7 +826,7 @@ echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 echo -e "$COLOR1└────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────── ${WH}BY${NC} ${COLOR1}───────────────┐${NC}"
 echo -e "$COLOR1 ${NC}       ${WH}• $author •${NC}         $COLOR1 $NC"
@@ -850,8 +850,8 @@ cd
 rm -rf /root/casper >/dev/null
 git config --global user.email "${emailscript}" &> /dev/null
 git config --global user.name "RMBL-VIP" &> /dev/null
-mkdir /root/casper
-cd /root/casper
+mkdir /root/rmbl
+cd /root/rmbl
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -945,7 +945,7 @@ echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 echo -e "$COLOR1└────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────── ${WH}BY${NC} ${COLOR1}───────────────┐${NC}"
 echo -e "$COLOR1 ${NC}       ${WH}• $author •${NC}         $COLOR1 $NC"
@@ -966,11 +966,11 @@ CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 git config --global user.email "${emailscript}" &> /dev/null
 git config --global user.name "RMBL-VIP" &> /dev/null
-mkdir /root/casper
-cd /root/casper
+mkdir /root/rmbl
+cd /root/rmbl
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -1067,7 +1067,7 @@ echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 rm -rf /etc/github
 echo -e "$COLOR1└────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────── ${WH}BY${NC} ${COLOR1}───────────────┐${NC}"
@@ -1089,11 +1089,11 @@ CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 git config --global user.email "${emailscript}" &> /dev/null
-git config --global user.name "casper9" &> /dev/null
-mkdir /root/casper
-cd /root/casper
+git config --global user.name "RMBL-VIP" &> /dev/null
+mkdir /root/rmbl
+cd /root/rmbl
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -1136,7 +1136,7 @@ Name     : $name1
 IPVPS    : $ivps1
 Status   : Deleted on  $hariini2
 "
-echo "${TEXTD}" >>/root/casper/delete_log  &> /dev/null
+echo "${TEXTD}" >>/root/rmbl/delete_log  &> /dev/null
 rm -rf .git
 git init &> /dev/null
 git add ipmini
@@ -1175,7 +1175,7 @@ echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 echo -e "$COLOR1└─────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────────── ${WH}BY${NC} ${COLOR1}─────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 $COLOR1 $NC"
@@ -1192,12 +1192,12 @@ superadmin=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main
 uu=$(curl -sS https://pastebin.com/raw/BZ9Fcnqf)
 author=$(cat /etc/profil)
 cd
-mkdir /root/casper
-cd /root/casper/
+mkdir /root/rmbl
+cd /root/rmbl/
 wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
-grep -E "$uu$listuser" "ipmini" >>/root/casper/client
-grep -E "@trial" "ipmini" >>/root/casper/client
+grep -E "$uu$listuser" "ipmini" >>/root/rmbl/client
+grep -E "@trial" "ipmini" >>/root/rmbl/client
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• LIST IPVPS •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -1212,7 +1212,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 m-ip
