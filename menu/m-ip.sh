@@ -599,19 +599,19 @@ uu=$(curl -sS https://pastebin.com/raw/BZ9Fcnqf)
 author=$(cat /etc/profil)
 TIMES="10"
 #CHATID=$(cat /etc/per/id)
-CHATID="1117211252"
+CHATID="6465475379"
 #KEY=$(cat /etc/per/token)
-KEY="6203209250:AAG7GoBbaUqo2qh4N-IGvScNisDWTHfLh8M"
+KEY="7051285128:AAEF95uzuBNYf2HKtlEWjdD2nvDCW26w62k"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 cd
-rm -rf /root/casper &> /dev/null
+rm -rf /root/rmbl &> /dev/null
 git config --global user.email "${emailscript}" &> /dev/null
-git config --global user.name "casper9" &> /dev/null
-mkdir /root/casper
-cd /root/casper/ &> /dev/null
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini &> /dev/null
+git config --global user.name "RMBL-VIP" &> /dev/null
+mkdir /root/rmbl
+cd /root/rmbl/ &> /dev/null
+wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
-grep -E "$uu$listuser" "ipmini" >>/root/casper/client
+grep -E "$uu$listuser" "ipmini" >>/root/rmbl/client
 if [ "$superadmin" = "VIP" ]; then
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "ipmini")
 else
@@ -654,7 +654,7 @@ else
 read -rp " Select one client or Input [0] to back. [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 if [[ ${CLIENT_NUMBER} == '0' ]]; then
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 m-ip
 fi
 fi
@@ -676,14 +676,14 @@ Name old     : $namabaru
 Name New    : $name1
 Status        : succes change
 "
-echo "${TEXTD}" >>/root/casper/delete_log  &> /dev/null
+echo "${TEXTD}" >>/root/rmbl/delete_log  &> /dev/null
 rm -rf .git
 git init &> /dev/null
 git add ipmini
 git commit -m remove &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/casper9/permission.git &> /dev/null
-git push -f https://${tokenscript}@github.com/casper9/permission.git &> /dev/null
+git remote add origin https://github.com/RMBL-VIP/permission.git &> /dev/null
+git push -f https://${tokenscript}@github.com/RMBL-VIP/permission.git &> /dev/null
 clear
 echo -e "$COLOR1┌──────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}         ${WH}• GANTI NAMA IPVPS •        ${NC} $COLOR1 $NC"
@@ -714,7 +714,7 @@ echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 echo -e "$COLOR1└─────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────────── ${WH}BY${NC} ${COLOR1}─────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 $COLOR1 $NC"
@@ -726,23 +726,23 @@ m-ip
 function renewipvps(){
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
-listuser=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $2}')
-superadmin=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $7}')
+listuser=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+superadmin=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $7}')
 uu=$(curl -sS https://pastebin.com/raw/BZ9Fcnqf)
 author=$(cat /etc/profil)
 TIMES="10"
 #CHATID=$(cat /etc/per/id)
-CHATID="1117211252"
+CHATID="6465475379"
 #KEY=$(cat /etc/per/token)
-KEY="6203209250:AAG7GoBbaUqo2qh4N-IGvScNisDWTHfLh8M"
+KEY="7051285128:AAEF95uzuBNYf2HKtlEWjdD2nvDCW26w62k"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 git config --global user.email "${emailscript}" &> /dev/null
-git config --global user.name "casper9" &> /dev/null
-mkdir /root/casper
-cd /root/casper
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini &> /dev/null
+git config --global user.name "RMBL-VIP" &> /dev/null
+mkdir /root/rmbl
+cd /root/rmbl
+wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• RENEW IPVPS •                ${NC} $COLOR1 $NC"
@@ -750,7 +750,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 until [[ $iprenew =~ ^[0-9.]+$ ]]; do
 read -p "   MASUKKAN IPNYA: " iprenew
-REQIP=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $4}')
+REQIP=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $4}')
 if [[ $iprenew = $REQIP ]]; then
 echo -ne
 else
@@ -784,17 +784,17 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 m-ip
 fi
-name1=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $2}') #name
-exp=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $3}') #exp
-ivps1=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $4}') #ip
-trial=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $5}') #ip
+name1=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $2}') #name
+exp=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $3}') #exp
+ivps1=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $4}') #ip
+trial=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $5}') #ip
 MYIP=$(curl -sS ipv4.icanhazip.com)
-UU2=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $2}')
-U2=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $2}')
-U3=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $3}')
-U4=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $4}')
-U5=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $5}')
-U6=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $6}')
+UU2=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+U2=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+U3=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+U4=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $4}')
+U5=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $5}')
+U6=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $6}')
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
@@ -810,8 +810,8 @@ git init &> /dev/null
 git add ipmini
 git commit -m renew &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/casper9/permission.git &> /dev/null
-git push -f https://${tokenscript}@github.com/casper9/permission.git &> /dev/null
+git remote add origin https://github.com/RMBL-VIP/permission.git &> /dev/null
+git push -f https://${tokenscript}@github.com/RMBL-VIP/permission.git &> /dev/null
 clear
 echo -e "$COLOR1┌────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}      ${WH}• RENEW IPVPS •      ${NC} $COLOR1 $NC"
@@ -847,7 +847,7 @@ echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 echo -e "$COLOR1└────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────── ${WH}BY${NC} ${COLOR1}───────────────┐${NC}"
 echo -e "$COLOR1 ${NC}       ${WH}• $author •${NC}         $COLOR1 $NC"
@@ -859,7 +859,7 @@ m-ip
 function gantinamabaru(){
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
-listuser=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+listuser=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 #superadmin=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $7}')
 superadmin=VIP
 #uu=@
@@ -867,17 +867,17 @@ uu=$(curl -sS https://pastebin.com/raw/BZ9Fcnqf)
 author=$(cat /etc/profil)
 TIMES="10"
 #CHATID=$(cat /etc/per/id)
-CHATID="1117211252"
+CHATID="6465475379"
 #KEY=$(cat /etc/per/token)
 KEY="6203209250:AAG7GoBbaUqo2qh4N-IGvScNisDWTHfLh8M"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 cd
-rm -rf /root/casper >/dev/null
+rm -rf /root/rmbl >/dev/null
 git config --global user.email "${emailscript}" &> /dev/null
-git config --global user.name "casper9" &> /dev/null
-mkdir /root/casper
-cd /root/casper
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini &> /dev/null
+git config --global user.name "RMBL-VIP" &> /dev/null
+mkdir /root/rmbl
+cd /root/rmbl
+wget https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• CHANGE NAME •                ${NC} $COLOR1 $NC"
@@ -885,7 +885,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 until [[ $iprenew =~ ^[0-9.]+$ ]]; do
 read -p "   MASUKKAN IPNYA: " iprenew
-REQIP=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $4}')
+REQIP=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $4}')
 if [[ $iprenew = $REQIP ]]; then
 echo -ne
 else
@@ -917,7 +917,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 m-ip
 fi
-name1=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $2}') #name
+name1=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $2}') #name
 exp=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $3}') #exp
 ivps1=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $4}') #ip
 trial=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $5}') #ip
