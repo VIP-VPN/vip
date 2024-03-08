@@ -918,16 +918,16 @@ read -n 1 -s -r -p "   Press any key to back on menu"
 m-ip
 fi
 name1=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $2}') #name
-exp=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $3}') #exp
-ivps1=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $4}') #ip
-trial=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $iprenew | awk '{print $5}') #ip
+exp=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $3}') #exp
+ivps1=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $4}') #ip
+trial=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $iprenew | awk '{print $5}') #ip
 MYIP=$(curl -sS ipv4.icanhazip.com)
-UU2=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $2}')
-U2=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $2}')
-U3=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $3}')
-U4=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $4}')
-U5=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $5}')
-U6=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $6}')
+UU2=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+U2=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+U3=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+U4=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $4}')
+U5=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $5}')
+U6=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $6}')
 ws=1
 regip2=$(expr "$U6" - "$ws")
 sed -i "s/### $U2 $U3 $U4 $U5 $U6/### $U2 $U3 $U4 $U5 ${regip2}/g" ipmini
@@ -937,8 +937,8 @@ git init &> /dev/null
 git add ipmini
 git commit -m renew &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/casper9/permission.git &> /dev/null
-git push -f https://${tokenscript}@github.com/casper9/permission.git &> /dev/null
+git remote add origin https://github.com/RMBL-VIP/permission.git &> /dev/null
+git push -f https://${tokenscript}@github.com/RMBL-VIP/permission.git &> /dev/null
 clear
 echo -e "$COLOR1┌────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}      ${WH}• CHANGE NAME •      ${NC} $COLOR1 $NC"
